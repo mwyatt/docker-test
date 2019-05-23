@@ -1,0 +1,24 @@
+
+Docker version 18.09.6, build 481bc77
+
+sudo docker build -t image-name .
+
+sudo docker run --name container-name -v /srv/www/local:/srv/www/container -p 49161:8080 -d image-name
+
+sudo docker exec -it container-name /bin/bash
+
+sudo docker container ls
+sudo docker volume ls
+sudo docker image ls
+
+sudo docker volume prune
+sudo docker system prune
+
+docker inspect -f '{{.NetworkSettings.IPAddress}}' mongo
+
+mongo
+https://robomongo.org/download
+
+tutorials
+https://www.thachmai.info/2015/04/30/running-mongodb-container/
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
