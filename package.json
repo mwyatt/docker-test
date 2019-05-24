@@ -5,13 +5,14 @@
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node --inspect=0.0.0.0 index.js"
+    "start": "nodemon --inspect=0.0.0.0 index.js"
   },
   "dependencies": {
     "express": "4.17.0",
     "lodash": "^4.17.11",
     "mongo-lite": "^0.3.2",
     "mongodb": "^3.2.5",
-    "mongoose": "^5.5.10"
+    "mongoose": "^5.5.10",
+    "nodemon": "^1.19.0"
   }
 }
