@@ -24,4 +24,6 @@ https://www.thachmai.info/2015/04/30/running-mongodb-container/
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 
 
-docker run --name node -v /srv/www/docker-test:/usr/src/app -p 49161:8080 -p 9229:9229 -d mwyatt/node
+docker run --name node -v /srv/www/docker-test:/usr/src/app -p 49161:8080 -p 9229:9229 -d node
+
+sudo docker run -d -p 27017:27017 -v /srv/docker-test/mongo-data:/data/db mongo
