@@ -1,0 +1,42 @@
+version: '3'
+services:
+  apache:
+    container_name: apache
+    build: './apache/'
+    volumes:
+      - ${DOCUMENT_ROOT-./public_html}:/var/www/html/
+    ports:
+      - '80:80'
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - front
+      - back
+  php:
+    build: './php/'
+    networks:
+      - back
+    volumes:
+      - ${DOCUMENT_ROOT-./public_html/}:/var/www/html/
+    container_name: php
+  mysql:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - back
+    environment:
+      MYSQL_ROOT_PASSWORD: "123"
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "123"
+    container_name: mysql
+networks:
+  front:
+  back:
+volumes:
+  data:
